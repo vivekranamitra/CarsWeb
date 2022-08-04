@@ -42,12 +42,14 @@ namespace CarsWeb.Controllers
                     }
                     else
                     {
-                        return BadRequest("Unable to login");
+                        loginModel.LoginResult = "Unable to login";
+                        return RedirectToAction("Index", "Login", loginModel);
                     }
                 }
                 else
                 {
-                    return BadRequest("Unable to login");
+                    loginModel.LoginResult = "Unable to login";
+                    return RedirectToAction("Index", "Login", loginModel);
                 }
             }
             else
